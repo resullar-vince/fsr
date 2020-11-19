@@ -1,45 +1,45 @@
 // Review and Refactor the following code. 
-public class Rectangle
+public class Cube
 {
-  public double Width { get; set; }
-  public double Height { get; set; }
+  public double Side { get; set; }
 }
 
-public class Circle
+public class Sphere
 {
   public double Radius { get; set; }
 }
 
-public class Triangle
+public class RectangularPyramid
 {
-  public double Base { get; set; }
+  public double Width { get; set; }
+  public double Length { get; set; }
   public double Height { get; set; }
 }
 
-public class ShapesAreaCalculator
+public class VolumeCalculator
 {
-  public double Area(object[] shapes)
+  public double Volume(object[] shapes)
   {
-    double area = 0;
+    double volume = 0;
     foreach (var shape in shapes)
     {
-      if (shape is Rectangle)
+      if (shape is Cube)
       {
-        Rectangle rectangle = (Rectangle)shape;
-        area += rectangle.Width * rectangle.Height;
+        Cube cube = (Cube)shape;
+        volume += Math.Pow(cube.side, 3);
       }
-      else if (shape is Circle)
+      else if (shape is Sphere)
       {
-        Circle circle = (Circle)shape;
-        area += circle.Radius * circle.Radius * Math.PI;
+        Sphere sphere = (Sphere)shape;
+        volume += 4/3 * Math.PI * Math.Pow(sphere.Radius, 3);
       }
-      else if (shape is Triangle)
+      else if (shape is RectangularPyramid)
       {
-        Triangle triangle = (Triangle)shape;
-        area += .5 * triangle.Base * triangle.Height;
+        RectangularPyramid rectangularPyramid = (RectangularPyramid)shape;
+        volume += 1/3 * rectangularPyramid.Width * rectangularPyramid.Length * rectangularPyramid.Height;
       }
     }
 
-    return area;
+    return volume;
   }
 }
