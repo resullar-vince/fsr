@@ -18,24 +18,24 @@ public class RectangularPyramid
 
 public class VolumeCalculator
 {
-  public double Volume(object[] shapes)
+  public double Volume(object[] solids)
   {
     double volume = 0;
-    foreach (var shape in shapes)
+    foreach (var solid in solids)
     {
-      if (shape is Cube)
+      if (solid is Cube)
       {
-        Cube cube = (Cube)shape;
+        Cube cube = (Cube)solid;
         volume += Math.Pow(cube.side, 3);
       }
-      else if (shape is Sphere)
+      else if (solid is Sphere)
       {
-        Sphere sphere = (Sphere)shape;
+        Sphere sphere = (Sphere)solid;
         volume += 4/3 * Math.PI * Math.Pow(sphere.Radius, 3);
       }
-      else if (shape is RectangularPyramid)
+      else if (solid is RectangularPyramid)
       {
-        RectangularPyramid rectangularPyramid = (RectangularPyramid)shape;
+        RectangularPyramid rectangularPyramid = (RectangularPyramid)solid;
         volume += 1/3 * rectangularPyramid.Width * rectangularPyramid.Length * rectangularPyramid.Height;
       }
     }
