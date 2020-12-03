@@ -43,6 +43,6 @@ function ShowV(solids) {
   })
 }
 
-const solids = [new Cube(4), new Sphere(3), RectangularPyramid(3, 4, 6)];
+const solids = [new Cube(4), new Sphere(3), new RectangularPyramid(3, 4, 6)];
 
 ShowV(solids);
