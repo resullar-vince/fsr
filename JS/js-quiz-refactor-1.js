@@ -31,7 +31,7 @@ function ShowV(solids) {
       const volume = Math.pow(solid.side, 3);
       console.log(solid.name + " volume: " + volume);
     } else if(solid.name === "Sphere") {
-      const volume = 4/3 * Math.PI * Math.Pow(solid.radius, 3);
+      const volume = 4/3 * Math.PI * Math.pow(solid.radius, 3);
       console.log(solid.name + " volume: " + volume);
     } else if(solid.name === "Rectangular Pyramid") {
       const volume = 1/3 * solid.width * solid.length * solid.height;
