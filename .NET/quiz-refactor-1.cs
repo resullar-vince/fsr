@@ -6,7 +6,8 @@ namespace SampleExercise
   public class Cube
   {
     public double Side { get; set; }
-    
+    public string Name = "Cube";
+
     public Cube(double side)
     {
       Side = side;
@@ -16,6 +17,7 @@ namespace SampleExercise
   public class Sphere
   {
     public double Radius { get; set; }
+    public string Name = "Sphere";
 
     public Sphere(double radius)
     {
@@ -28,33 +30,39 @@ namespace SampleExercise
     public double Width { get; set; }
     public double Length { get; set; }
     public double Height { get; set; }
+    public string Name = "RectangularPyramid";
+    public double Color { get; set; }
+    public string Texture { get; set; }
 
-    public RectangularPyramid(double width, double length, double height)
+
+    public RectangularPyramid(double width, double length, double height, double color, string texture)
     {
       Width = width;
       Length = length;
       Height = height;
+      Color = color;
+      Texture = texture
     }
   }
 
-  public class Calculator
+  public class Calc
   {
-    public double Volume(object[] solids)
+    public double showV(object[] solids)
     {
       double volume = 0;
       foreach (var solid in solids)
       {
-        if (solid is Cube)
+        if (solid.Name === "Cube")
         {
           Cube cube = (Cube)solid;
           volume += Math.Pow(cube.Side, 3);
         }
-        else if (solid is Sphere)
+        else if (solid.Name === "Sphere")
         {
           Sphere sphere = (Sphere)solid;
           volume += 4 / 3 * Math.PI * Math.Pow(sphere.Radius, 3);
         }
-        else if (solid is RectangularPyramid)
+        else if (solid.Name === "RectangularPyramid")
         {
           RectangularPyramid rectangularPyramid = (RectangularPyramid)solid;
           volume += 1 / 3 * rectangularPyramid.Width * rectangularPyramid.Length * rectangularPyramid.Height;
