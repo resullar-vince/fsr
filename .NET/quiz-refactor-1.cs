@@ -1,45 +1,67 @@
 // Review and Refactor the following code. 
-public class Cube
-{
-  public double Side { get; set; }
-}
+using System;
 
-public class Sphere
+namespace SampleExercise
 {
-  public double Radius { get; set; }
-}
-
-public class RectangularPyramid
-{
-  public double Width { get; set; }
-  public double Length { get; set; }
-  public double Height { get; set; }
-}
-
-public class VolumeCalculator
-{
-  public double Volume(object[] solids)
+  public class Cube
   {
-    double volume = 0;
-    foreach (var solid in solids)
+    public double Side { get; set; }
+    
+    public Cube(double side)
     {
-      if (solid is Cube)
-      {
-        Cube cube = (Cube)solid;
-        volume += Math.Pow(cube.side, 3);
-      }
-      else if (solid is Sphere)
-      {
-        Sphere sphere = (Sphere)solid;
-        volume += 4/3 * Math.PI * Math.Pow(sphere.Radius, 3);
-      }
-      else if (solid is RectangularPyramid)
-      {
-        RectangularPyramid rectangularPyramid = (RectangularPyramid)solid;
-        volume += 1/3 * rectangularPyramid.Width * rectangularPyramid.Length * rectangularPyramid.Height;
-      }
+      Side = side;
     }
+  }
 
-    return volume;
+  public class Sphere
+  {
+    public double Radius { get; set; }
+
+    public Sphere(double radius)
+    {
+      Radius = radius;
+    }
+  }
+
+  public class RectangularPyramid
+  {
+    public double Width { get; set; }
+    public double Length { get; set; }
+    public double Height { get; set; }
+
+    public RectangularPyramid(double width, double length, double height)
+    {
+      Width = width;
+      Length = length;
+      Height = height;
+    }
+  }
+
+  public class Calculator
+  {
+    public double Volume(object[] solids)
+    {
+      double volume = 0;
+      foreach (var solid in solids)
+      {
+        if (solid is Cube)
+        {
+          Cube cube = (Cube)solid;
+          volume += Math.Pow(cube.Side, 3);
+        }
+        else if (solid is Sphere)
+        {
+          Sphere sphere = (Sphere)solid;
+          volume += 4 / 3 * Math.PI * Math.Pow(sphere.Radius, 3);
+        }
+        else if (solid is RectangularPyramid)
+        {
+          RectangularPyramid rectangularPyramid = (RectangularPyramid)solid;
+          volume += 1 / 3 * rectangularPyramid.Width * rectangularPyramid.Length * rectangularPyramid.Height;
+        }
+      }
+
+      return volume;
+    }
   }
 }
