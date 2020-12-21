@@ -34,7 +34,6 @@ namespace SampleExercise
     public double Color { get; set; }
     public string Texture { get; set; }
 
-
     public RectangularPyramid(double width, double length, double height, double color, string texture)
     {
       Width = width;
@@ -52,23 +51,22 @@ namespace SampleExercise
       double volume = 0;
       foreach (var solid in solids)
       {
-        if (solid.Name === "Cube")
+        if (solid.Name == "Cube")
         {
           Cube cube = (Cube)solid;
           volume += Math.Pow(cube.Side, 3);
         }
-        else if (solid.Name === "Sphere")
+        else if (solid.Name == "Sphere")
         {
           Sphere sphere = (Sphere)solid;
           volume += 4 / 3 * Math.PI * Math.Pow(sphere.Radius, 3);
         }
-        else if (solid.Name === "RectangularPyramid")
+        else if (solid.Name == "RectangularPyramid")
         {
           RectangularPyramid rectangularPyramid = (RectangularPyramid)solid;
           volume += 1 / 3 * rectangularPyramid.Width * rectangularPyramid.Length * rectangularPyramid.Height;
         }
       }
-
       return volume;
     }
   }
