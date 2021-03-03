@@ -31,16 +31,12 @@ namespace SampleExercise
     public double Length { get; set; }
     public double Height { get; set; }
     public string Name = "RectangularPyramid";
-    public double Color { get; set; }
-    public string Texture { get; set; }
 
-    public RectangularPyramid(double width, double length, double height, double color, string texture)
+    public RectangularPyramid(double width, double length, double height)
     {
       Width = width;
       Length = length;
       Height = height;
-      Color = color;
-      Texture = texture
     }
   }
 
