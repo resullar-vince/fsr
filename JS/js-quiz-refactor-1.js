@@ -1,7 +1,7 @@
 // Task:
-// - Create a feature that can display and calculate the volume of 3D Shapes (Cube, Sphere, etc.)
+// - Create a feature that can display and calculate volumes of 3D Shapes (Cube, Sphere, etc.)
 //
-// As a Final Reviewer, you should:
+// As a Final Reviewer, you should be able to:
 // Comment, review and/or refactor the code below. 
 
 class Cube
